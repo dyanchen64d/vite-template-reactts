@@ -1,12 +1,33 @@
 {
   "name": "vite-app",
   "version": "0.0.0",
+  "nodemonConfig": {
+    "delay": "200",
+    "verbose": true,
+    "exec": "node ./target",
+    "watch": [
+      "target"
+    ]
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "dev:server:build": "cross-env NODE_ENV=development node build.js",
+    "dev:server:run": "cross-env NODE_ENV=development nodemon",
+    "dev:client": "vite build",
+    "env:local": "cp ./envs/local.env .env",
+    "env:staging": "cp ./envs/staging.env .env"
   },
   "dependencies": {
+    "@types/koa": "^2.13.1",
+    "@types/koa-ejs": "^4.2.2",
+    "@types/koa-router": "^7.4.1",
+    "dotenv": "^8.2.0",
+    "esbuild": "^0.11.5",
+    "koa": "^2.13.1",
+    "koa-ejs": "^4.3.0",
+    "koa-router": "^10.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
@@ -14,6 +35,11 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react-refresh": "^1.3.1",
+    "cross-env": "^7.0.3",
+    "esbuild-node-externals": "^1.0.3",
+    "nodeman": "^1.1.2",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.2",
     "vite": "^2.1.5"
   }
