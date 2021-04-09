@@ -5,7 +5,7 @@ const { nodeExternalsPlugin } = require('esbuild-node-externals');
 dotenv.config();
 
 esbuild.build({
-    entryPoints: ['server/index.ts'],
+    entryPoints: ['server/app.ts'],
     bundle: true,
     platform: 'node',
     target: 'node14',

@@ -10,12 +10,9 @@ export default defineConfig({
         entryFileNames: '[name].js'
       }
     },
-    outDir: 'dist'
+    outDir: 'dist',
+    assetsDir: ''
   },
-  server: {
-    host: '0.0.0.0',
-    port: 3001,
-    cors: true
-  },
+  base: 'static',
   plugins: [reactRefresh()]
 })
