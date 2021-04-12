@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
-    //- - const cssFiles = cssFiles
-    //- each file in cssFiles
-    //-   link(rel="stylesheet" href="/static/#{file}")
+    each file in cssFiles
+      link(rel="stylesheet" href="/static/"+file)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
@@ -14,15 +13,3 @@
     <script type="module" src="#{scriptUrl}"></script>
   </body>
 </html>
-
-//- doctype html
-//- html(lang="en")
-//-   head
-//-     meta(charset="UTF-8")
-//-     link(rel="icon" type="image/svg+xml" href="/static/favicon.svg")
-//-     style 
-//-       each file in cssFiles
-//-         include /static/file
-//-   body
-//-     div#root
-//-     script(type="module" src=scriptUrl)

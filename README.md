@@ -6,8 +6,7 @@
 
 - yarn env:local
 - Server
-  - yarn dev:server:build
-  - yarn dev:server:run
+  - yarn dev:server
 - Client
   - yarn dev:client
 - chrome: http://localhost:3003/

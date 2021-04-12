@@ -15,6 +15,7 @@ const ROOT = pkgDir.sync(__dirname) || '';
 const getCssFiles = () => {
   const files = fs.readdirSync(ROOT + '/dist');
   const cssFiles = files.filter(name => name.indexOf('.css') > 0);
+  return cssFiles;
 }
 
 dovEnv.config();
