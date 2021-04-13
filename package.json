@@ -16,7 +16,7 @@
     "dev:server:build": "cross-env NODE_ENV=development node build.js",
     "dev:server:run": "cross-env NODE_ENV=development nodemon",
     "dev:server": "concurrently \"yarn dev:server:build\" \"yarn dev:server:run\"",
-    "dev:client": "vite build",
+    "dev:client:build": "vite build",
     "env:local": "cp ./envs/local.env .env",
     "env:staging": "cp ./envs/staging.env .env"
   },
