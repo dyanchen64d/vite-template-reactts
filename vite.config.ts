@@ -7,13 +7,13 @@ export default defineConfig({
     // generate manifest.json in outDir
     manifest: true,
     rollupOptions: {
-      input: './src/main.tsx'
+      input: 'client/main.tsx'
     },
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: ''
   },
   base: '',
-  // publicDir: '',
+  publicDir: 'dist',
   server: {
     host: '0.0.0.0',
     port: 3010

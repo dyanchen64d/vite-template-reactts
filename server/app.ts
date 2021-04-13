@@ -28,7 +28,7 @@ router.get('/pingping', (ctx, next) => {
   ctx.body = 'pongpong';
 });
 
-router.get('/src/(.*)', async (ctx, next) => {
+router.get('/client/(.*)', async (ctx, next) => {
   await send(ctx, ctx.path);
 });
 
@@ -36,9 +36,9 @@ router.get('/dist/(.*)', async (ctx, next) => {
   await send(ctx, ctx.path);
 });
 
-router.get('/assets/(.*)', async (ctx, next) => {
-  await send(ctx, `/dist/${ctx.path}`);
-});
+// router.get('/assets/(.*)', async (ctx, next) => {
+//   await send(ctx, `/dist/${ctx.path}`);
+// });
 
 router.get('/', async (ctx, next) => {
   return await ctx.render('index', {
@@ -46,8 +46,8 @@ router.get('/', async (ctx, next) => {
       env: process.env.NODE_ENV // production development
     }),
     env: process.env.NODE_ENV,
-    mainJs: `/dist/${manifest['src/main.tsx'].file}`,
-    mainCss: `/dist/${manifest['src/main.tsx'].css}`
+    mainJs: `/dist/${manifest['client/main.tsx'].file}`,
+    mainCss: `/dist/${manifest['client/main.tsx'].css}`
   })
 });
 
