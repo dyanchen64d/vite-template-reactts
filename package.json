@@ -11,20 +11,20 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "serve": "vite preview",
-    "dev:server:build": "cross-env NODE_ENV=development node build.js",
-    "dev:server:run": "cross-env NODE_ENV=development nodemon",
-    "dev:server": "concurrently \"yarn dev:server:build\" \"yarn dev:server:run\"",
-    "dev:client:build": "vite build",
+    "server:build": "node build.js",
+    "server:run": "nodemon",
+    "server": "concurrently \"yarn server:build\" \"yarn server:run\"",
     "env:local": "cp ./envs/local.env .env",
-    "env:staging": "cp ./envs/staging.env .env"
+    "env:production": "cp ./envs/production.env .env"
   },
   "dependencies": {
     "@types/koa": "^2.13.1",
     "@types/koa-ejs": "^4.2.2",
     "@types/koa-router": "^7.4.1",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "esbuild": "^0.11.5",
     "koa": "^2.13.1",
     "koa-ejs": "^4.3.0",

@@ -2,11 +2,19 @@
 
 - `degit git@github.com:syoutomoushimasu/vite-template-reactts.git my-project`
 
-## Useage
+## development
 
 - yarn env:local
 - Server
-  - yarn dev:server
+  - yarn server
 - Client
-  - yarn dev:client
+  - yarn dev
 - chrome: http://localhost:3003/
+
+## production
+
+- yarn env:production
+- Server
+  - yarn server
+- Client
+  - yarn build

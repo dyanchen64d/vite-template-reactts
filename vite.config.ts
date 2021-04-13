@@ -7,13 +7,10 @@ export default defineConfig({
     // generate manifest.json in outDir
     manifest: true,
     rollupOptions: {
-      input: './src/main.tsx',
-      // output: {
-      //   entryFileNames: '[name].js'
-      // }
+      input: './src/main.tsx'
     },
-    // outDir: 'dist',
-    // assetsDir: '',
+    outDir: 'dist',
+    assetsDir: 'assets'
   },
   base: '',
   // publicDir: '',

@@ -5,7 +5,7 @@ import path from 'path';
 import dovEnv from 'dotenv';
 import send from 'koa-send';
 import pkgDir from 'pkg-dir';
-import fs from 'fs';
+import manifest from '../dist/manifest.json';
 
 const app = new Koa();
 const router = new KoaRouter();
@@ -17,8 +17,10 @@ dovEnv.config();
 const render = views(
   path.join(ROOT, 'server/template'),
   {
-    extension: 'html'
-  }
+    map: {
+      html: 'ejs'
+    }
+  },
 );
 app.use(render);
 
@@ -30,9 +32,22 @@ router.get('/src/(.*)', async (ctx, next) => {
   await send(ctx, ctx.path);
 });
 
+router.get('/dist/(.*)', async (ctx, next) => {
+  await send(ctx, ctx.path);
+});
+
+router.get('/assets/(.*)', async (ctx, next) => {
+  await send(ctx, `/dist/${ctx.path}`);
+});
+
 router.get('/', async (ctx, next) => {
   return await ctx.render('index', {
-    scriptUrl: '/static/main.js',
+    config: JSON.stringify({
+      env: process.env.NODE_ENV // production development
+    }),
+    env: process.env.NODE_ENV,
+    mainJs: `/dist/${manifest['src/main.tsx'].file}`,
+    mainCss: `/dist/${manifest['src/main.tsx'].css}`
   })
 });
 
