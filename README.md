@@ -5,8 +5,9 @@
 ## development
 
 - yarn dev
-- chrome: http://localhost:3003/
+- chrome: http://localhost:3030/
 
 ## production
 
 - yarn prod
+- chrome: http://localhost:3030/
