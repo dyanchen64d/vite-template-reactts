@@ -36,10 +36,6 @@ router.get('/dist/(.*)', async (ctx, next) => {
   await send(ctx, ctx.path);
 });
 
-// router.get('/assets/(.*)', async (ctx, next) => {
-//   await send(ctx, `/dist/${ctx.path}`);
-// });
-
 router.get('/', async (ctx, next) => {
   return await ctx.render('index', {
     config: JSON.stringify({

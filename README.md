@@ -4,17 +4,9 @@
 
 ## development
 
-- yarn env:local
-- Server
-  - yarn server
-- Client
-  - yarn dev
+- yarn dev
 - chrome: http://localhost:3003/
 
 ## production
 
-- yarn env:production
-- Server
-  - yarn server
-- Client
-  - yarn build
+- yarn prod

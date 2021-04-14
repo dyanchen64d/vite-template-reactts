@@ -10,14 +10,16 @@
     ]
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "concurrently \"yarn env:dev\" \"yarn server\" \"yarn client:dev\"",
+    "prod": "concurrently \"yarn env:prod\" \"yarn server\" \"yarn client:build\"",
+    "client:dev": "vite",
+    "client:build": "vite build",
     "serve": "vite preview",
     "server:build": "node build.js",
     "server:run": "nodemon",
     "server": "concurrently \"yarn server:build\" \"yarn server:run\"",
-    "env:local": "cp ./envs/local.env .env",
-    "env:production": "cp ./envs/production.env .env"
+    "env:dev": "cp ./envs/local.env .env",
+    "env:prod": "cp ./envs/production.env .env"
   },
   "dependencies": {
     "@types/koa": "^2.13.1",
